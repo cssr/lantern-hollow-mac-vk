@@ -5,7 +5,7 @@ It is an empty game window with one passing test. During the class the agent bui
 This copy is for **Mac** and uses the **DesktopVK** (Vulkan) platform.
 
 > **Mac note.** This project uses the Vulkan platform (`DesktopVK`), which is the one MonoGame
-> recommends for Mac. If the window does not open, copy the error text and tell your teacher.
+> recommends for Mac.
 
 ## Instructions
 
