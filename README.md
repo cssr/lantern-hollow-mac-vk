@@ -7,7 +7,7 @@ This copy is for **Mac** and uses the **DesktopVK** (Vulkan) platform.
 > **Mac note.** This project uses the Vulkan platform (`DesktopVK`), which is the one MonoGame
 > recommends for Mac. If the window does not open, copy the error text and tell your teacher.
 
-## For students: before class (15 minutes)
+## Instructions
 
 1. Install the **.NET 10 SDK**: https://dotnet.microsoft.com/download/dotnet/10.0
 2. Get the project: `git clone <URL of this repo>` (or download the ZIP and unzip it).
@@ -51,17 +51,3 @@ Do it at home, not in class.
 | Content build error on a clean clone | Run `dotnet build` for the whole solution again; the first run restores the Content Builder. |
 | A test fails right after you cloned | Tell your teacher. The starter should always pass. |
 
-## For the teacher
-
-- Source of truth: this repo is generated from the official `MonoGame.EmptyGame.CSharp` template
-  (platforms trimmed to `DesktopVK`, names changed to `LanternHollow`, a `Tests/` project added).
-  Both repos (Windows/GL and Mac/VK) are identical except for the platform folder, the run command and the CI runner.
-- Branches planned: `start` (this), `ex4-solution`, `ex5-solution`, `broken-jump`, `finish`. Only `start` exists so far.
-- A GitHub Action (`.github/workflows/test.yml`) builds and tests every branch on a **Mac** runner.
-  **Push first, wait for the green tick, then give students the URL.**
-- This starter was written without a .NET compiler, so nothing has been run yet. The first push is the real test.
-  If `dotnet build -warnaserror` fails because of a warning in a template or package project (not in `Source/`),
-  either fix that warning or change the command to `dotnet build` in `AGENTS.md`, the slides and the Action.
-- Packages float (`3.8.*`, `2.*`, `17.*`). Once the Action is green, pin the versions it resolved and tag a release.
-- `NuGetAudit` is off in `Directory.Build.props` so a new security advisory cannot turn the build red during class.
-- Tests compile `Source/` into their own assembly (see `Tests/LanternHollow.Tests.csproj`), so they never open a window.
